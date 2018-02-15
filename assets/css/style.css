@@ -1,7 +1,7 @@
 
 h1{
 	font-family: 'Space Mono', monospace;
-	color: #DAA520;
+	color: #fffff;
 	font-weight: bold;
 	vertical-align: bottom;
 	
@@ -9,14 +9,23 @@ h1{
 
 }
 body{
-	background-image: url(../images/space.jpg);
+	font-family: 'Space Mono', monospace;
+	color: #ffffff;
+	background-image: url(../images/spaceback.jpg);
+	background-size: cover;
+}
+
+section{
+	background-color: #000000;
+	border-style: groove;
+	border-width: 5px;
 }
 
 
 #header{
-	background-image: url(../images/tngcast.jpg);
-	background-repeat:repeat;
-	background-size: contain;
+	background-color: #000000;
 
 }
+
+
 
