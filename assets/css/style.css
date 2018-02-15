@@ -1,0 +1,22 @@
+
+h1{
+	font-family: 'Space Mono', monospace;
+	color: #DAA520;
+	font-weight: bold;
+	vertical-align: bottom;
+	
+	
+
+}
+body{
+	background-image: url(../images/space.jpg);
+}
+
+
+#header{
+	background-image: url(../images/tngcast.jpg);
+	background-repeat:repeat;
+	background-size: contain;
+
+}
+
