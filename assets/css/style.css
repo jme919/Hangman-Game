@@ -1,7 +1,7 @@
 
 h1{
 	font-family: 'Space Mono', monospace;
-	color: #fffff;
+	color: #DAA520;
 	font-weight: bold;
 	vertical-align: bottom;
 	
@@ -19,6 +19,7 @@ section{
 	background-color: #000000;
 	border-style: groove;
 	border-width: 5px;
+	border-color: #DAA520
 }
 
 
