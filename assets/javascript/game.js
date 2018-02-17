@@ -11,7 +11,7 @@ var currentGuess;        // letters that was just picked by user
 var blankLetters = [];    //blanks for current word
 var attempts;            // attempts lefts
 var corrCounter;         // number of correct guesses
-var trekWord             //array of star trek words
+var trekWords             //array of star trek words
 var letterGuess = [];    //stores letters guessed
 
 
@@ -44,7 +44,7 @@ function blankWord(){
 //trying to show the number of attempts that are left for user//
           showAttempts = document.getElementById("remaining")
 
-          function attempts(){
+          function attemptsFun(){
           	showAttempts.setAttribute("class", "label label-primary");
           	showAttempts.innterhtml = attempts + " remaining.";
           	if (attempts < 1 ) {
@@ -60,7 +60,46 @@ function blankWord(){
           		}
           	}
           }
+//player key input//
 
+			function keyed(input) {
+
+				userGuess = document.getElementById("guessed");
+				currentGuess = string.fromcharcode(input.keycode);
+				if(attempts === 0 || corrCounter + spaces === blankLetters.length){
+					alert("Click play again to start a new game.");
+					return;
+
+				}else if (letterGuess.find(function(value){
+					return value === currentGuess.toUppercase()
+				})) {
+					alert("That letter has already been guessed!");
+					return;
+				}
+				for (var i = 0; i < word.length; i++) {
+					if(word[i] === currentGuess.tolowercase() || word[i] === currentGuess.toUppercase()){
+						blankLetters[i].innterhtml = word[i];
+						corrCounter +=1;
+					}
+				}
+
+				var j = (word.indexOf(currentGuess));
+				if(j === -1){
+					attempts -= 1;
+					attemptFun();
+
+
+				} else{
+					attemptFun();
+				}
+
+				letterGuess.push(currentGuess.toUppercase());
+				userGuess.innterhtml = letterGuess;
+
+
+
+
+			}
 
 
 
