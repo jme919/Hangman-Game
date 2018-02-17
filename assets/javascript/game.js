@@ -8,7 +8,7 @@ window.onload = funtion(){
 var spaces;               // put spaces between words
 var word;                // the current word
 var currentGuess;        // letters that was just picked by user
-var blankLetter = [];    //blanks for current word
+var blankLetters = [];    //blanks for current word
 var attempts;            // attempts lefts
 var corrCounter;         // number of correct guesses
 var trekWord             //array of star trek words
@@ -34,7 +34,7 @@ function blankWord(){
 
 		}
 
-		blankLetter.push(currentGuess);
+		blankLetters.push(currentGuess);
 		wordBlank.appendchild(correct);
 		correct.appendchild(currentGuess);
 	}
@@ -49,6 +49,15 @@ function blankWord(){
           	showAttempts.innterhtml = attempts + " remaining.";
           	if (attempts < 1 ) {
           		showAttempts.setAttribute("class", "label label-danger");
+          		showAttempts.innterhtml = "You couldn't do it captain!!!";
+          	}else if (tries < 5) {
+          		showAttempts.setAttribute("class", "label label-warning");
+          	}
+          	for (var i = 0; i < blankLetters.length; i++) {
+          		if (corrCounter + spaces === blankLetters.length){
+          			showAttempts.setAttribute("class", "label label-success");
+          			showAttempts.innterhtml = "Make it so....You Win!!!";
+          		}
           	}
           }
 
