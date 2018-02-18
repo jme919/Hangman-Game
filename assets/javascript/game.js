@@ -11,10 +11,18 @@ var currentGuess;        // letters that was just picked by user//
 var blankLetters = [];    //blanks for current word//
 var attempts;            // attempts lefts//
 var corrCounter;         // number of correct guesses//
-var trekWords;             //array of star trek words//
+var trekWord;             //array of star trek words//
 var letterGuess = [];    //stores letters guessed//
 var randomTrek; 
 
+
+function select() {
+		if (chosenCategory === randomState[0]) {
+			categoryName.innerHTML = "Category: States";
+		} else if (chosenCategory === randomState[1]) {
+			categoryName.innerHTML = "Category: Character";
+		}
+	}
 
 //this was an attempt to create blanks for the current word that is being guessed//
 function blankWord(){
@@ -26,11 +34,11 @@ function blankWord(){
 		currentGuess = document.createElement("li");
 		currentGuess.setAttribute.("class", "currentguess");
 		if (word[i] === " ") {
-			currentGuess.innterhtml = " ";
+			currentGuess.innerhtml = " ";
 			space = 1;
 
 		} else {
-			currentGuess.innterhtml = "_";
+			currentGuess.innerhtml = "_";
 
 		}
 
@@ -41,22 +49,24 @@ function blankWord(){
 
 }
 
+
+
 //trying to show the number of attempts that are left for user//
           showAttempts = document.getElementById("remaining")
 
           function attemptsFun(){
           	showAttempts.setAttribute("class", "label label-primary");
-          	showAttempts.innterhtml = attempts + " remaining.";
+          	showAttempts.innerhtml = attempts + " remaining.";
           	if (attempts < 1 ) {
           		showAttempts.setAttribute("class", "label label-danger");
-          		showAttempts.innterhtml = "You couldn't do it captain!!!";
+          		showAttempts.innerhtml = "You couldn't do it captain!!!";
           	}else if (tries < 5) {
           		showAttempts.setAttribute("class", "label label-warning");
           	}
           	for (var i = 0; i < blankLetters.length; i++) {
           		if (corrCounter + spaces === blankLetters.length){
           			showAttempts.setAttribute("class", "label label-success");
-          			showAttempts.innterhtml = "Make it so....You Win!!!";
+          			showAttempts.innerhtml = "Make it so....You Win!!!";
           		}
           	}
           }
@@ -78,7 +88,7 @@ function blankWord(){
 				}
 				for (var i = 0; i < word.length; i++) {
 					if(word[i] === currentGuess.tolowercase() || word[i] === currentGuess.toUppercase()){
-						blankLetters[i].innterhtml = word[i];
+						blankLetters[i].innerhtml = word[i];
 						corrCounter +=1;
 					}
 				}
@@ -94,7 +104,7 @@ function blankWord(){
 				}
 
 				letterGuess.push(currentGuess.toUppercase());
-				userGuess.innterhtml = letterGuess;
+				userGuess.innerhtml = letterGuess;
 
 
 
@@ -106,12 +116,21 @@ function blankWord(){
                       trekWord = [
                       ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"];
                       ];
-			randomTrek = trekWord[math.floor(math.random() * trekWord.length)];
-			word = randomTrek[math.floor(math.random() * randomtrek.length)];
+			chosenCategory = trekWord[math.floor.(math.random() * trekWord.length)];
+			word = chosenCategory[math.floor(math.random() * randomtrek.length)];
 
 			document.onkeypress = keyed;
 			blankLetters = [];
 			letterGuess = [];
+			attempts = 10;
+			corrCounter = 0;
+			spaces = 0;
+			blankWord();
+			attemptFun();
+			select();
+
+			gameOn();
+
 
 
 
