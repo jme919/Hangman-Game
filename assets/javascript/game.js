@@ -17,10 +17,10 @@ var randomTrek;
 
 
 function select() {
-		if (chosenCategory === randomState[0]) {
-			categoryName.innerHTML = "Category: States";
+		if (chosenCategory === trekWord[0]) {
+			categoryName.innerHTML = "Some Text";
 		} else if (chosenCategory === randomState[1]) {
-			categoryName.innerHTML = "Category: Character";
+			categoryName.innerHTML = "Some Text";
 		}
 	}
 
@@ -34,11 +34,11 @@ function blankWord(){
 		currentGuess = document.createElement("li");
 		currentGuess.setAttribute.("class", "currentguess");
 		if (word[i] === " ") {
-			currentGuess.innerhtml = " ";
+			currentGuess.innerHTML = " ";
 			space = 1;
 
 		} else {
-			currentGuess.innerhtml = "_";
+			currentGuess.innerHTML = "_";
 
 		}
 
@@ -56,17 +56,17 @@ function blankWord(){
 
           function attemptsFun(){
           	showAttempts.setAttribute("class", "label label-primary");
-          	showAttempts.innerhtml = attempts + " remaining.";
+          	showAttempts.innerHTML = attempts + " remaining.";
           	if (attempts < 1 ) {
           		showAttempts.setAttribute("class", "label label-danger");
-          		showAttempts.innerhtml = "You couldn't do it captain!!!";
+          		showAttempts.innerHTML = "You couldn't do it captain!!!";
           	}else if (tries < 5) {
           		showAttempts.setAttribute("class", "label label-warning");
           	}
           	for (var i = 0; i < blankLetters.length; i++) {
           		if (corrCounter + spaces === blankLetters.length){
           			showAttempts.setAttribute("class", "label label-success");
-          			showAttempts.innerhtml = "Make it so....You Win!!!";
+          			showAttempts.innerHTML = "Make it so....You Win!!!";
           		}
           	}
           }
@@ -88,7 +88,7 @@ function blankWord(){
 				}
 				for (var i = 0; i < word.length; i++) {
 					if(word[i] === currentGuess.tolowercase() || word[i] === currentGuess.toUppercase()){
-						blankLetters[i].innerhtml = word[i];
+						blankLetters[i].innerHTML = word[i];
 						corrCounter +=1;
 					}
 				}
@@ -104,7 +104,7 @@ function blankWord(){
 				}
 
 				letterGuess.push(currentGuess.toUppercase());
-				userGuess.innerhtml = letterGuess;
+				userGuess.innerHTML = letterGuess;
 
 
 
