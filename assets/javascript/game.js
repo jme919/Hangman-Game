@@ -13,13 +13,13 @@ var attempts;            // attempts lefts//
 var corrCounter;         // number of correct guesses//
 var trekWord;             //array of star trek words//
 var letterGuess = [];    //stores letters guessed//
-var randomTrek; 
+ 
 
 
 function select() {
 		if (chosenCategory === trekWord[0]) {
 			categoryName.innerHTML = "Some Text";
-		} else if (chosenCategory === randomState[1]) {
+		} else if (chosenCategory === trekWord[1]) {
 			categoryName.innerHTML = "Some Text";
 		}
 	}
@@ -116,8 +116,8 @@ function blankWord(){
                       trekWord = [
                       ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"];
                       ];
-			chosenCategory = trekWord[math.floor.(math.random() * trekWord.length)];
-			word = chosenCategory[math.floor(math.random() * randomtrek.length)];
+			chosenCategory = trekWord[Math.floor(Math.random() * trekWord.length)];
+			word = chosenCategory[Math.floor(Math.random() * randomtrek.length)];
 
 			document.onkeypress = keyed;
 			blankLetters = [];
