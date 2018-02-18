@@ -1,4 +1,4 @@
-window.onload = funtion(){
+window.onload = function(){
 
 
 
@@ -11,9 +11,9 @@ var currentGuess;        // letters that was just picked by user
 var blankLetters = [];    //blanks for current word
 var attempts;            // attempts lefts
 var corrCounter;         // number of correct guesses
-var trekWords             //array of star trek words
+var trekWords;             //array of star trek words
 var letterGuess = [];    //stores letters guessed
-
+var randomTrek; 
 
 
 //this was an attempt to create blanks for the current word that is being guessed//
@@ -101,7 +101,11 @@ function blankWord(){
 
 			}
 
+			function gameOn() {
+
+                      trekWord = ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"];
+
+			}
 
 
-var trekWord = ["Picard", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Borgs"];
 };
