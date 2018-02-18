@@ -1,18 +1,18 @@
-window.onload = function(){
+window.onload = function() {
 
 
 
 
 
 
-var spaces;               // put spaces between words
-var word;                // the current word
-var currentGuess;        // letters that was just picked by user
-var blankLetters = [];    //blanks for current word
-var attempts;            // attempts lefts
-var corrCounter;         // number of correct guesses
-var trekWords;             //array of star trek words
-var letterGuess = [];    //stores letters guessed
+var spaces;               // put spaces between words//
+var word;                // the current word//
+var currentGuess;        // letters that was just picked by user//
+var blankLetters = [];    //blanks for current word//
+var attempts;            // attempts lefts//
+var corrCounter;         // number of correct guesses//
+var trekWords;             //array of star trek words//
+var letterGuess = [];    //stores letters guessed//
 var randomTrek; 
 
 
@@ -103,9 +103,21 @@ function blankWord(){
 
 			function gameOn() {
 
-                      trekWord = ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"];
+                      trekWord = [
+                      ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"];
+                      ];
+			randomTrek = trekWord[math.floor(math.random() * trekWord.length)];
+			word = randomTrek[math.floor(math.random() * randomtrek.length)];
+
+			document.onkeypress = keyed;
+			blankLetters = [];
+			letterGuess = [];
+
+
 
 			}
+
+
 
 
 };
