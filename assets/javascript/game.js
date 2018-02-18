@@ -1,6 +1,6 @@
 $(document).ready(function (){
 
-
+console.log("it lives");
 var spaces;// put spaces between words//
 var word;// the current word//
 var currentGuess;// letters that was just picked by user//
@@ -12,6 +12,15 @@ var letterGuess = [];//stores letters guessed//
  
 
 
+document.onkeyup = function(event) {
+
+     // Determines which key was pressed.
+     var userGuess = event.key;
+
+     // Randomly chooses a choice from the options array. This is the Computer's guess.
+     var computerGuess = trekWord[Math.floor(Math.random() * trekWord.length)];
+alert("User guess: " + userGuess);
+}
 
 
 
@@ -64,7 +73,7 @@ function blankWord(){
 
 				userGuess = document.getElementById("guessed");
 				currentGuess = string.fromcharcode(input.keycode);
-				}else if (letterGuess.find(function(value){
+				}if (letterGuess.find(function(value){
 					return value === currentGuess.toUppercase()
 				})) {
 					alert("That letter has already been guessed!");
@@ -93,15 +102,16 @@ function blankWord(){
 
 
 
-			}
+			})
 
 			function gameOn() {
 
                       trekWord = [
                       ["Picard","Crusher", "Tasha", "Wesley", "Geordi", "Trills", "Stardate", "Troi","Riker", "Data", "Worf", "Enterprise","Klingon", "Bajoran", "Romulans", "Ferengi", "Vulcans", "Warp","Borgs"]
                       ];
-			chosenCategory = trekWord[Math.floor(Math.random() * trekWord.length)];
-			word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+			
+
+
 
 			document.onkeypress = keyed;
 			blankLetters = [];
@@ -118,9 +128,8 @@ function blankWord(){
 
 
 
-			}
+			};
 
 
 
 
-};
